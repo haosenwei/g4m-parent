@@ -24,13 +24,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-			<version>1.4.4.RELEASE</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>2.0.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,13 +45,18 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
 			<dependency>
-			    <groupId>org.springframework.cloud</groupId>
-			    <artifactId>spring-cloud-dependencies</artifactId>
-			    <version>Edgware.SR3</version>
-			    <type>pom</type>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.BUILD-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+   <modules>
+     <module>g4m-gateway</module>
+     <module>g4m-eureka</module>
+   </modules>
 </project>

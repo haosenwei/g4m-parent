@@ -1,4 +1,4 @@
-package com.g4m_parent;
+package com.g4m.g4m_eureka;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
