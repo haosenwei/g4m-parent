@@ -14,11 +14,11 @@
 		<artifactId>g4m-parent</artifactId>
 		<version>1.0</version>
 	</parent>
-		<dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 </project>
