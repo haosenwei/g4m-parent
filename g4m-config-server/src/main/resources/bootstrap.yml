@@ -1,20 +1,20 @@
+spring:
+  application:
+    name: configserver
 server:
   port: 8888 #服务端口
-spring:
+spring.cloud.config:
   cloud:
     config:
       server:
-        health:
-          repositories:
-            myservice:
-              label: mylabel
-            myservice-dev:
-              name: myservice
-              profiles: development
         git:
           uri: https://github.com/haosenwei/property
           username: 961970674@qq.com
           password: hao189108
+management:
+  context-path: /admin
+spring:
+  profiles: dev
 eureka:
   instance:
     appname: configserver
