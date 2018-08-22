@@ -14,4 +14,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://18761.b.bangmc.vip/eureka/
+      defaultZone: http://localhost:8761/eureka/

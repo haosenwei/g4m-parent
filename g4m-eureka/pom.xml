@@ -7,20 +7,16 @@
 
 	<name>g4m-eureka</name>
 	<url>http://maven.apache.org</url>
+
 	<parent>
 		<groupId>com.g4m</groupId>
 		<artifactId>g4m-parent</artifactId>
 		<version>1.0</version>
 	</parent>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
