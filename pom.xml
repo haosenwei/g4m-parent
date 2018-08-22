@@ -29,6 +29,7 @@
 		<module>g4m-config</module>
 	</modules>
 
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
