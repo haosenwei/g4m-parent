@@ -12,11 +12,11 @@ spring:
           uri: https://github.com/haosenwei/property
           username: 961970674@qq.com
           password: hao189108
-#  rabbitmq: #RabbitMQ相关的配置
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq: #RabbitMQ相关的配置
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 
 eureka: 
   client:
