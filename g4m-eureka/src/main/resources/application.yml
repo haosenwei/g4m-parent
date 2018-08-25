@@ -7,3 +7,10 @@ eureka:
     fetchRegistry: false
   server:
     waitTimeInMsWhenSyncEmpty: 0
+spring:
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin
