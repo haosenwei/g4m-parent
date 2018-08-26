@@ -1,11 +1,36 @@
 server:
-  port: 8088
-
+  jsp-servlet:
+    init-parameters:
+      development: true
+  port: 8121
+  servlet:
+    session:
+      cookie:
+        max-age: 1800
 spring:
   application:
-    name: gateway-service
-
+    name: gateway-service1
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  session:
+    store-type: redis
+  redis:
+    host: localhost
+    password: 
+    port: 6379
+    timeout: 3000
+    jedis:
+      pool:
+        max-idle: 20
+        min-idle: 5
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:admin@localhost:8761/eureka/
+      defaultZone: http://admin:admin@59.110.218.135:8761/eureka/
+
+# SPRING SESSION REDIS
+#spring.redis.pool.max-active=60
+
+# Maximum age of the session cookie 30 分钟

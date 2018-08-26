@@ -1,11 +1,5 @@
-server:
-  port: 58081
-
 spring:
   application:
     name: configtest
-  profiles:
-    active: dev
-  cloud:
-    config:
-      profile: dev
+server:
+  port: 38081
