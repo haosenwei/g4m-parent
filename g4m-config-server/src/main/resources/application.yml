@@ -12,7 +12,6 @@ spring:
           uri: https://github.com/haosenwei/property
           username: 961970674@qq.com
           password: hao189108
-          searchPaths: '{application}'
   rabbitmq: #RabbitMQ相关的配置
     host: localhost
     port: 5672
