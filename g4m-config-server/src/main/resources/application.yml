@@ -2,7 +2,7 @@
   port: 8888 #服务端口
 spring: 
   application:  
-    name: configserver #指定服务名
+    name: g4m-configserver #指定服务名
   profiles:
     active: dev
   cloud:  
