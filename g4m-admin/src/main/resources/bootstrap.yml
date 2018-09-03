@@ -1,9 +1,8 @@
 spring:
-  cloud:
-    config:
-      profile: dev
-      uri: http://8888.b.bangmc.vip/
+##  cloud:
+##    config:
+##      label: dev
+##      profile: dev
+##      uri: http://8888.b.bangmc.vip
   application:
     name: g4m-admin
-server:
-  port: 38081
