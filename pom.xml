@@ -29,6 +29,8 @@
 		<module>g4m-web</module>
 		<module>g4m-config</module>
 		<module>g4m-admin</module>
+		<module>g4m-common</module>
+		<module>g4m-sleuth</module>
 	</modules>
 	<dependencies>
 		<dependency>
