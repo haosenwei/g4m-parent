@@ -1,4 +1,4 @@
-package com.g4m.websocket;
+package com.g4m.admin.websocket;
 
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.g4m.conf;
+package com.g4m.admin.conf;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -7,7 +7,6 @@ import org.apache.logging.log4j.core.Filter;
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.core.appender.AbstractAppender;
-import org.apache.logging.log4j.core.appender.FileAppender;
 import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.apache.logging.log4j.core.config.plugins.PluginAttribute;
 import org.apache.logging.log4j.core.config.plugins.PluginElement;
@@ -15,7 +14,8 @@ import org.apache.logging.log4j.core.config.plugins.PluginFactory;
 import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.g4m.websocket.WebSocketTest;
+import com.g4m.admin.websocket.WebSocketTest;
+
 
 @Plugin(name = "HtmlAppender", category = "Core", elementType = "appender", printObject = true)
 public class HtmlAppender extends AbstractAppender {
