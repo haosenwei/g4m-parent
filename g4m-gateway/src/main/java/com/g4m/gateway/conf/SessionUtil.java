@@ -1,4 +1,4 @@
-package com.g4m.conf;
+package com.g4m.gateway.conf;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
