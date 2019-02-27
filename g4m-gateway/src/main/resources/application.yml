@@ -9,7 +9,7 @@ server:
         max-age: 1800
 spring:
   application:
-    name: gateway-service1
+    name: gateway-service
   mvc:
     view:
       prefix: /WEB-INF/jsp/
