@@ -1,0 +1,4 @@
+一,启动顺序
+1,g4m-eureka			端口:8761
+2,g4m-config-server	端口:8888
+3,g4m-gateway			端口:8121
