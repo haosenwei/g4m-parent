@@ -1,5 +1,9 @@
 spring:
+  application:
+    name: g4m-config
   cloud:
     config:
       profile: dev
-      uri: http://8888.b.bangmc.vip/
+      uri: http://localhost:8888/
+server:
+  port: 38081
