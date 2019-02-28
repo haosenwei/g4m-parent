@@ -32,12 +32,12 @@
 		<module>g4m-common</module>
 		<module>g4m-sleuth</module>
 	</modules>
-	<dependencies>
+<!-- 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-	</dependencies>
+	</dependencies> -->
 
 	<dependencyManagement>
 		<dependencies>
