@@ -1,0 +1,5 @@
+spring: 
+  application:  
+    name: g4m-eureka #指定服务名
+  profiles:
+    active: dev
