@@ -57,12 +57,17 @@ public class RedisConfig extends CachingConfigurerSupport{
 	//缓存管理器
 	@Bean 
 	public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
-	RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofHours(1)); // 设置缓存有效期一小时
-        return RedisCacheManager
-                .builder(RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory))
-                .cacheDefaults(redisCacheConfiguration).build();
-    }
+		
+		System.out.println(host);
+		System.out.println(port);
+		System.out.println(timeout);
+		
+		
+		RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofHours(1)); // 设置缓存有效期一小时
+		return RedisCacheManager.builder(RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory))
+				.cacheDefaults(redisCacheConfiguration).build();
+	}
+
 	@Bean
 	public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory){
 		StringRedisTemplate template = new StringRedisTemplate(factory);
@@ -70,6 +75,15 @@ public class RedisConfig extends CachingConfigurerSupport{
 		template.afterPropertiesSet();
 		return template;
 	}
+
+	@Bean
+	public StringRedisTemplate stringRedisTemplate( RedisConnectionFactory redisConnectionFactory) {
+		StringRedisTemplate template = new StringRedisTemplate();
+		template.setConnectionFactory(redisConnectionFactory);
+		return template;
+	}
+
+
 	private void setSerializer(StringRedisTemplate template){
 		@SuppressWarnings({ "rawtypes", "unchecked" })
 		Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
