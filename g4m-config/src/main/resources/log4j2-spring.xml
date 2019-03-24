@@ -12,7 +12,7 @@
 				pattern="11[%d{yy-MM-dd HH:mm:ss}] [%t] [%p] [%c{1.}:%L]: %msg%xEx%n" />
 		</Console>
 
-		<Http name="Http" url="http://localhost:8080/send">
+		<Http name="Http" url="http://localhost:8080/log">
 			<Property name="X-Java-Runtime" value="$${java:runtime}" />
 			<JsonLayout properties="true" />
 			<!-- <SSL> <KeyStore location="log4j2-keystore.jks" passwordEnvironmentVariable="KEYSTORE_PASSWORD"/> 
