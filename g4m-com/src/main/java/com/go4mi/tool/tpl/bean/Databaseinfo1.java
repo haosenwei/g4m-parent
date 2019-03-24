@@ -7,7 +7,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "tables")
-public class Databaseinfo {
+public class Databaseinfo1 {
 	/**
 	 * 网站前缀
 	 * com.go4mi

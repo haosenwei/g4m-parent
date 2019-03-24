@@ -31,8 +31,7 @@
                     <value>b</value>
                 </list>
             </params>
-            <path>src/main/resources/entity.txt</path>
-            <targetFileType>java</targetFileType>
+            <path>D:\git\g4m-parent\g4m-com\src\main\resources\entity.txt</path>
             <targetFilePath>C:\Users\hao\Desktop\</targetFilePath>
         </temlates>
     </templates>

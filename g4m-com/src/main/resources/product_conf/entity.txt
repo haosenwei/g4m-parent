@@ -1,4 +1,4 @@
-package ${prefix!}.entity${spacePrefix!};
+package ${prefix}.entity${spacePrefix};
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,10 +11,10 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author ${author!}
  *
  */
-public class ${EntityName!} implements Serializable {
+public class ${EntityName} implements Serializable {
 
 
-	private Long ${entityName!} ;
+	private Long ${entityName} ;
 	
 	
 	/**  */
@@ -28,33 +28,33 @@ public class ${EntityName!} implements Serializable {
 	
 	/**  */
 	private Date updateTime;
-	<#list list! as obj>
+	<#list list as obj>
 	
 	/** ${obj.comment!} */
-	private ${obj.javaType!} ${obj.fieldName!};
+	private ${obj.javaType} ${obj.fieldName};
 	</#list>
 
 	
 	/** get 主键 ***/
-	public Long get${EntityName!}() {
-		return ${entityName!};
+	public Long get${EntityName}() {
+		return ${entityName};
 	}
 	
 	/** set 主键 ***/
-	public void set${EntityName!} (Long ${entityName!}) {
-		this.${entityName!} = ${entityName!};
+	public void set${EntityName} (Long ${entityName}) {
+		this.${entityName} = ${entityName};
 	}
 	
-	<#list list! as obj>
-	/** get ${obj.comment!} ***/<#if obj.format?? >
-	${obj.format!}</#if>
-	public ${obj.javaType!} get${obj.fieldNameU!}() {
-		return ${obj.fieldName!};
+	<#list list as obj>
+	/** get ${obj.comment} ***/<#if obj.format?? >
+	${obj.format}</#if>
+	public ${obj.javaType} get${obj.fieldNameU}() {
+		return ${obj.fieldName};
 	}
 	
-	/** set ${obj.comment!} ***/
-	public void set${obj.fieldNameU!}(${obj.javaType!} ${obj.fieldName!}) {
-		this.${obj.fieldName!} = ${obj.fieldName!};
+	/** set ${obj.comment} ***/
+	public void set${obj.fieldNameU}(${obj.javaType} ${obj.fieldName}) {
+		this.${obj.fieldName} = ${obj.fieldName};
 	}
 	</#list>
 	
