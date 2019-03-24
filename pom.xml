@@ -31,6 +31,8 @@
 		<module>g4m-admin</module>
 		<module>g4m-common</module>
 		<module>g4m-sleuth</module>
+		<module>g4m-com</module>
+		<module>g4m-zipkin</module>
 	</modules>
 <!-- 	<dependencies>
 		<dependency>
