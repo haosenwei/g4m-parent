@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.go4mi.original.mapper.sys.SysTestMapper">
+	<resultMap id="SysTestBean" type="com.go4mi.original.entity.sys.SysTest">
+		<id property="sysTest" column="sys_test" jdbcType="BIGINT" />
+		
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+		<result property="createUser" column="create_user" jdbcType="BIGINT" />
+		<result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+		<result property="updateUser" column="update_user" jdbcType="BIGINT" />
+		
+		<result property="name" column="name" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- 根据 id 查询测试,测试对象 -->
+	<select id="selectSysTestById" parameterType="long" resultMap="SysTestBean">
+		select sys_test ,create_time , create_user , update_time , update_user ,
+		name 
+		from sys_test 
+		where sys_test=#{sysTest}
+	</select>
+	
+	<!-- 查询所有测试,测试对象 -->
+	<select id="selectSysTestAll" resultMap="SysTestBean">
+		select sys_test ,create_time , create_user , update_time , update_user ,
+		name 
+		from sys_test
+	</select>
+
+	<!-- 插入测试,测试对象 主键自动生成 -->
+	<insert id="insertSysTest" keyProperty="id" useGeneratedKeys="true" parameterType="Map">
+			insert into sys_test
+			(
+			sys_test ,create_time , create_user , update_time , update_user ,
+			name 
+			)
+			values( 
+			#{sysTest} ,
+			#{createTime} ,
+			#{createUser} ,
+			#{updateTime} ,
+			#{updateUser} ,
+			 #{name} 
+			)
+		</insert>
+
+
+	<!-- 根据 条件 查询测试,测试对象 -->
+	<select id="selectSysTestByCondition" parameterType="Map" resultMap="SysTestBean">
+		select sys_test ,create_time , create_user , update_time , update_user ,
+		t.name 
+		from sys_test t
+		where 1=1
+		
+		<if test=" sysTest != null and sysTest != '' ">
+			and t.sys_test = #{sysTest}
+		</if>
+		<if test=" createUser != null and createUser != '' ">
+			and t.create_user = #{createUser}
+		</if>
+		<if test=" updateUser != null and updateUser != '' ">
+			and t.update_user = #{updateUser}
+		</if>
+		
+		<if test=" name != null and name != '' ">
+			and name = #{name}
+		</if>
+	</select>
+
+	<!-- 更新测试,测试对象 -->
+	<update id="updateSysTest" parameterType="Map">
+		update sys_test set
+		sys_test = #{sysTest} ,
+		create_time = #{createTime} ,
+		create_user = #{createUser} ,
+		update_time = #{updateTime} ,
+		update_user = #{updateUser} ,
+		name = #{name}
+		where sys_test = #{sysTest}
+	</update>
+	
+	<!-- 删除测试,测试对象 -->
+	<delete id="delSysTestByIds" parameterType="Map">
+		delete from sys_test where id in (${ids})
+	</delete>
+	
+	<!-- 根据 条件更新测试,测试对象 -->
+	<update id="updateSysTestByCondition" parameterType="Map">
+		update sys_test
+		<set>
+			<if test=" sysTest != null and sysTest != '' ">
+				sys_test = #{sysTest} ,
+			</if>
+			<if test=" createUser != null and createUser != '' ">
+				create_user = #{createUser} ,
+			</if>
+			<if test=" createTime != null and createTime != '' ">
+				create_time = #{createTime} ,
+			</if>
+			<if test=" updateUser != null and updateUser != '' ">
+				update_user = #{updateUser} ,
+			</if>
+			<if test=" updateTime != null and updateTime != '' ">
+				update_time = #{updateTime} ,
+			</if>
+			<if test=" name !=null and name != '' ">
+				name = #{name}
+			</if>
+		</set>
+		where 1=1
+			<if test=" sysTest != null and sysTest != '' ">
+				and t.sys_test = #{sysTest}
+			</if>
+			<if test=" createUser != null and createUser != '' ">
+				and t.create_user = #{createUser}
+			</if>
+			<if test=" updateUser != null and updateUser != '' ">
+				and t.update_user = #{updateUser}
+			</if>
+			<if test=" nameCondition !=null and nameCondition != '' ">
+				and name = #{nameCondition}
+			</if>
+	</update>
+	
+	<!--  begin分页查询 -->
+	<!-- 根据条件查询分页数据 -->
+	<select id="selectSysTestByPager" parameterType="Map" resultMap="SysTestBean">
+		select 
+		t.sys_test ,t.create_time , t.create_user , t.update_time , t.update_user ,
+		t.name 
+		from sys_test t
+		where 1=1
+			<if test=" sysTest != null and sysTest != '' ">
+				and t.sys_test = #{sysTest}
+			</if>
+			<if test=" createUser != null and createUser != '' ">
+				and t.create_user = #{createUser}
+			</if>
+			<if test=" updateUser != null and updateUser != '' ">
+				and t.update_user = #{updateUser}
+			</if>
+			<if test=" name !=null and name != '' ">
+				and name = #{name}
+			</if>
+		limit #{start}, #{length}
+	</select>
+	<!-- 根据条件查询测试,测试对象数量 -->
+	<select id="selectSysTestCountByPager" parameterType="Map" resultType="int">
+		select
+		count(1)
+		from sys_test
+		where 1=1
+			<if test=" sysTest != null and sysTest != '' ">
+				and t.sys_test = #{sysTest}
+			</if>
+			<if test=" createUser != null and createUser != '' ">
+				and t.create_user = #{createUser}
+			</if>
+			<if test=" updateUser != null and updateUser != '' ">
+				and t.update_user = #{updateUser}
+			</if>
+			<if test=" name !=null and name != '' ">
+				and name = #{name}
+			</if>
+			<if test=" dataScope !=null and dataScope != '' ">
+				and #{dataScope}
+			</if>
+	</select>
+	<!-- end 分页查询 -->
+</mapper>
